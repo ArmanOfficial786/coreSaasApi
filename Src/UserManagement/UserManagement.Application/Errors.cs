@@ -19,5 +19,9 @@ public static class Errors
     #endregion
     #region Role Errors
     public static ErrorDTO RoleAlreadyExists => new("Role_Already_Exists", "Role already exists for this user.");
+    public static ErrorDTO RoleNotFound => new("Role_Not_Found", "Role not found.");
     #endregion
+    #region ModulePermission Errors
+    public static ErrorDTO ModulePermissionNotFound => new("Module_Permission_Not_Found", "One or more module permissions not found.");
+    #endregion  
 }

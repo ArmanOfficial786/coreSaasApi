@@ -20,12 +20,15 @@ public static class Program
 
         // ─── CORS ───
         var corsAllow = builder.Configuration["AppConfig:CORSAllow"] ?? "";
+        var origins = corsAllow.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                           .Select(o => o.Trim())
+                           .ToArray();
 
         _ = builder.Services.AddCors(options =>
         {
             options.AddPolicy("AllowHrmWeb", policy =>
             {
-                policy.WithOrigins(corsAllow)
+                policy.WithOrigins(origins)
                       .WithHeaders("Authorization", "Content-Type")
                       .AllowAnyMethod();
             });
@@ -80,7 +83,10 @@ public static class Program
             var dbInitializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
             dbInitializer.SeedAsync().GetAwaiter().GetResult();
         }
-        _ = app.UseHttpsRedirection();
+        if (!app.Environment.IsDevelopment())
+        {
+            _ = app.UseHttpsRedirection();
+        }
 
         _ = app.UseExceptionHandler(options => { });
         _ = app.UseCors("AllowHrmWeb");

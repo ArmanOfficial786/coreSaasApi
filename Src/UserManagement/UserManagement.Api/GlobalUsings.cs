@@ -3,5 +3,8 @@ global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Mvc;
 global using Shared.Domain.DTOs;
 global using UserManagement.Application.Commands.CompanyCommands.CreateCompany;
+global using UserManagement.Application.Commands.RoleCommands.CreateRole;
 global using UserManagement.Application.Commands.UserCommands.CreateUser;
+global using UserManagement.Application.Queries.CompanyQuery.GetAllCompany;
+global using UserManagement.Application.Queries.RoleQuery.GetAllRole;
 global using UserManagement.Application.ViewModels;

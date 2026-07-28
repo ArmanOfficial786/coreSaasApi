@@ -7,16 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EventHandler\**" />
+    <EmbeddedResource Remove="EventHandler\**" />
+    <None Remove="EventHandler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Shared\Shared.Application\Shared.Application.csproj" />
     <ProjectReference Include="..\..\Shared\Shared.Domain\Shared.Domain.csproj" />
     <ProjectReference Include="..\UserManagement.Domain\UserManagement.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\" />
+    <Folder Include="Commands\CompanyRoleCommands\DeleteCompanyRole\" />
     <Folder Include="Common\" />
-    <Folder Include="EventHandler\" />
-    <Folder Include="Queries\" />
+    <Folder Include="Interface\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
   </ItemGroup>
 
 </Project>

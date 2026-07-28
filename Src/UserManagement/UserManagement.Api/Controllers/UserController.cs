@@ -1,12 +1,7 @@
-﻿using MediatR;
-using Shared.Domain.DTOs;
-using UserManagement.Application.Commands.UserCommands.CreateUser;
-using UserManagement.Application.ViewModels;
-
-namespace UserManagement.Api.Controllers;
+﻿namespace UserManagement.Api.Controllers;
 
 [ApiController]
-[Route("security/[controller]")]
+[Route("UserManagement/[controller]")]
 [Authorize]
 public class UserController : ControllerBase
 {

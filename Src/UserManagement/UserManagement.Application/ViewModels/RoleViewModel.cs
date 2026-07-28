@@ -7,7 +7,7 @@ public class RoleViewModel
     public Guid Id { get; init; }
     public string? Name { get; init; }
     public string? Desc { get; init; }
-    public List<ModulePermissionViewModel>? ModulePermissions { get; init; }
+    public List<ModulePermissionViewModel>? ModulePermissions { get; set; }
 
     public RoleViewModel() { }
 }
